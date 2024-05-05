@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   const form = document.getElementById('preferences-form');
-  const fontSizeInput = document.getElementById('font-size');
-  const fontColorInput = document.getElementById('font-color');
+  const fontSizeInput = document.getElementById('fontsize');
+  const fontColorInput = document.getElementById('fontcolor');
 
   // Load saved preferences
   loadPreferences();
