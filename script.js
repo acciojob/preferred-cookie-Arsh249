@@ -10,15 +10,15 @@ document.addEventListener('DOMContentLoaded', function() {
     event.preventDefault();
 
     // Get user preferences
-    const fontSize = fontSizeInput.value;
-    const fontColor = fontColorInput.value;
+    const fontsize = fontSizeInput.value;
+    const fontcolor = fontColorInput.value;
 
     // Save preferences as cookies
-    document.cookie = `fontSize=${fontSize}; expires=Fri, 31 Dec 9999 23:59:59 GMT`;
-    document.cookie = `fontColor=${fontColor}; expires=Fri, 31 Dec 9999 23:59:59 GMT`;
+    document.cookie = `fontSize=${fontsize}; expires=Fri, 31 Dec 9999 23:59:59 GMT`;
+    document.cookie = `fontColor=${fontcolor}; expires=Fri, 31 Dec 9999 23:59:59 GMT`;
 
     // Apply preferences immediately
-    applyPreferences(fontSize, fontColor);
+    applyPreferences(fontsize, fontcolor);
   });
 
   // Function to load saved preferences
@@ -30,16 +30,16 @@ document.addEventListener('DOMContentLoaded', function() {
       preferences[key] = value;
     });
 
-    if (preferences.fontSize && preferences.fontColor) {
-      applyPreferences(preferences.fontSize, preferences.fontColor);
+    if (preferences.fontsize && preferences.fontcolor) {
+      applyPreferences(preferences.fontsize, preferences.fontcolor);
     }
   }
 
   // Function to apply preferences
-  function applyPreferences(fontSize, fontColor) {
-    document.body.style.fontSize = `${fontSize}px`;
-    document.body.style.color = fontColor;
-    fontSizeInput.value = fontSize;
-    fontColorInput.value = fontColor;
+  function applyPreferences(fontsize, fontcolor) {
+    document.body.style.fontSize = `${fontsize}px`;
+    document.body.style.color = fontcolor;
+    fontSizeInput.value = fontsize;
+    fontColorInput.value = fontcolor;
   }
 });
